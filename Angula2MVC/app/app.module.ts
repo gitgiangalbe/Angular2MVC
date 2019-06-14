@@ -7,20 +7,33 @@ import { AppComponent } from './app.component';
 import { routing } from './app.routing';
 import { UserComponent } from './components/user.component';
 import { HomeComponent } from './components/home.component';
-import { Ng2Bs3ModalModule } from 'ng2-bs3-modal/ng2-bs3-modal';
 import { UserService } from './Service/user.service';
 import { UserFilterPipe } from './Filter/user.pipe';
 import { SearchComponent } from './Shared/search.component';
 import AppErrorHandler from './Shared/errorhandler';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatNativeDateModule } from '@angular/material';
+import { MatCardModule, MatNativeDateModule, MatButtonModule, MatProgressSpinnerModule, MatIconModule } from '@angular/material';
+import { MatFormFieldModule, MatInputModule, MatRadioModule, MatDatepickerModule, MatAutocompleteModule } from '@angular/material';
+import { MatSelectModule, MatDialogModule, MatMenuModule, MatProgressBarModule  } from '@angular/material';
+import { ManageUser } from './components/manageuser.component';
 
 @NgModule({
-    imports: [BrowserModule, ReactiveFormsModule, HttpModule, routing, Ng2Bs3ModalModule, FormsModule ],
-    declarations: [AppComponent, UserComponent, HomeComponent, UserFilterPipe, SearchComponent],
+    imports: [BrowserModule, ReactiveFormsModule, HttpModule, routing, FormsModule,
+        BrowserAnimationsModule,
+        MatCardModule,
+        MatNativeDateModule,
+        MatButtonModule,
+        MatProgressSpinnerModule,
+        MatIconModule, MatFormFieldModule,
+        MatInputModule, MatRadioModule,
+        MatDatepickerModule, MatAutocompleteModule,
+        MatSelectModule, MatDialogModule, MatMenuModule, MatProgressBarModule],
+    declarations: [AppComponent, UserComponent, HomeComponent, UserFilterPipe, SearchComponent, ManageUser],
     providers: [{provide: ErrorHandler, useClass: AppErrorHandler }, { provide: APP_BASE_HREF, useValue: '/' }, UserService],
-    bootstrap: [AppComponent]
+    bootstrap: [AppComponent],
+    entryComponents: [ManageUser]
 })
 
 export class AppModule { }

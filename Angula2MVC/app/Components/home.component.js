@@ -12,7 +12,7 @@ var HomeComponent = /** @class */ (function () {
     }
     HomeComponent = __decorate([
         core_1.Component({
-            template: "<img src=\"../../images/users.png\" style=\"text-align:center\" />"
+            template: "<mat-card class=\"example-card\">\n  <mat-card-header>\n    <div mat-card-avatar class=\"example-header-image\"></div>\n    <mat-card-title>Utenti</mat-card-title>\n    <mat-card-subtitle>Gestione degli utenti di Tozzi Giancarlo</mat-card-subtitle>\n  </mat-card-header>\n  <img mat-card-image src=\"../../images/users.png\" alt=\"Gestione Utenti\">\n  <mat-card-content>\n    <p>\n      Questo Card serve per connettere alla gestione degli utenti di questa nuova applicazione scritta\n        con c# MVC 5 e Angular 5.\n    </p>\n  </mat-card-content>\n  <mat-card-actions>\n    <button mat-button>LIKE</button>\n    <button mat-button>SHARE</button>\n  </mat-card-actions>\n</mat-card>"
         })
     ], HomeComponent);
     return HomeComponent;
